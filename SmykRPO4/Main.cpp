@@ -9,8 +9,6 @@ int main()
 
 
 
-
-
 	return 0;
 	}
 
@@ -495,4 +493,42 @@ std::cout << "\n" << "Среднее арифметическое всех чи�
 		}
 	}
 	std::cout << "\n";
+	*/
+/*	
+		const int massiv = 5;
+		int arr[massiv]{};
+	
+		for (size_t i = 0; i < massiv; i++)
+		{
+			arr[i] = rand() % 6;
+			std::cout << arr[i] << " ";
+		}
+		std::cout << "\n";
+		for (size_t g = 0; g < massiv; g++)
+		{
+			if (arr[g] == 0)
+			{
+				std::cout << -1 << " ";
+			}
+			std::cout << arr[g] << " ";
+		}
+	*/
+/*	const int row = 3, col = 4;
+
+
+		int arr[row][col];
+		int sum = 0;
+
+
+		for (int i = 0; i < row; i++)
+		{
+			sum = 0;
+			for (int j = 0; j < col; j++)
+			{
+				arr[i][j] = rand() % 10;
+				sum += arr[i][j];
+				std::cout << arr[i][j] << " ";
+			}
+			std::cout << "| " << sum << "\n";
+		}
 	*/
