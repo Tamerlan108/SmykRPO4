@@ -479,7 +479,7 @@ std::cout << "\n" << "Сумма всех положительных чисел:
 std::cout << "\n" << "Сумма всех отрицательных чисел: " << summines;
 std::cout << "\n" << "Среднее арифметическое всех чисел: " << (sumplus + summines) / size;
 */
-/*	const int row = 3, col = 4;
+/*	const int row = 3, col = 4; 
 
 
 	int arr[row][col];
