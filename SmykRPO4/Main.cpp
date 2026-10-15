@@ -11,315 +11,7 @@ int main()
 	srand(time(NULL));
 
 
-	int choosemenu = 0;
-	int choosecat = 0;
-	int choosedrink = 0;
-	int choose = 0;
-	int AllSumInBasket = 0;
-	int number = 0;
-	int apple = 120, orange = 140, apricot = 145, pear = 130;
-	int tomato = 110, onion = 95, cucumber = 120;
-	int garlic = 75, petr = 85;
-	double sumDiscount = 0;
-	int hawthorn = 250;
-	bool fruitBought = false;
-	bool hawthornBought = false;
-	int hawthornSum = 0;
-	int cost = 0;
 
-
-
-	while (true)
-	{
-		system("cls");
-		std::cout << "\t \t \t \t \t \t Магазин Соки Севы\n";
-		std::cout << "1 - Категории\n";
-		std::cout << "2 - Общая сумма корзины\n";
-		std::cout << "0 - Выход из магазина\n\n";
-		std::cout << "Ввод: ";
-		std::cin >> choosemenu;
-
-		if (choosemenu == 1)
-		{
-			while (true)
-			{
-				system("cls");
-				std::cout << "\n\n\n\t\t Выберите категорию\n\n\n";
-				std::cout << "1 - Фруктовые\n";
-				std::cout << "2 - Овощные\n";
-				std::cout << "3 - Чаи\n";
-				std::cout << "4 - Настойки\n";
-				std::cout << "0 - Выход \n\n";
-				std::cout << "Ввод: ";
-				std::cin >> choosecat;
-
-
-				if (choosecat == 1)
-				{
-					int fruitJustBought = 0;
-
-					system("cls");
-					std::cout << "\n\n\n\t\t Выбрана категория Фруктовые\n\n\n";
-					std::cout << "1 - Яблочный\n";
-					std::cout << "2 - Апельсиновый\n";
-					std::cout << "3 - Абрикосовый\n";
-					std::cout << "4 - Грушевый \n";
-					std::cout << "0 - Выход к выбору категории \n\n";
-					std::cout << "Ввод: ";
-					std::cin >> choosedrink;
-					if (choosedrink == 1)
-					{
-						std::cout << "Литр Яблочного сока стоит: 120 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Яблочного сока?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							AllSumInBasket = AllSumInBasket + (apple * number);
-							fruitJustBought++;
-							break;
-
-						}
-					}
-					if (choosedrink == 2)
-					{
-						std::cout << "Литр Апельсинового сока стоит: 140 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Апелсинового сока?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							AllSumInBasket = AllSumInBasket + (orange * number);
-							fruitJustBought++;
-							break;
-						} 
-					}
-					if (choosedrink == 3)
-					{
-						std::cout << "Литр Абрикосового сока стоит: 145 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Абрикосового сока?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							AllSumInBasket = AllSumInBasket + (apricot * number);
-							fruitJustBought++;
-							break;
-						} 
-					}
-					if (choosedrink == 4)
-					{
-						std::cout << "Литр Грушевого сока стоит: 130 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Грушевого сока?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							AllSumInBasket = AllSumInBasket + (pear * number);
-							fruitJustBought++;
-							break;
-						}
-					}
-					if (fruitJustBought > 0 && !fruitBought)
-					{
-						fruitBought = true;
-
-						if (hawthornBought)
-						{
-							AllSumInBasket -= hawthornSum;
-							hawthornBought = false;
-							hawthornSum = 0;
-
-							system("cls");
-							std::cout << "Покупка фруктового сока АННУЛИРОВАЛА боярышник\n";
-							std::cout << "Деньги за настойку возвращены в корзину\n";
-							std::cout << "Боярышник больше недоступен для покупки\n";
-							Sleep(2500);
-						}
-						else
-						{
-							std::cout << "\nВнимание! После покупки фруктового сока боярышник недоступен.\n";
-							Sleep(1500);
-						}
-					}
-				}
-
-				else if (choosecat == 2)
-				{
-					system("cls");
-					std::cout << "\n\n\n\t\t Выбрана категория Овощные\n\n\n";
-					std::cout << "1 - Томатный\n";
-					std::cout << "2 - Луковый\n";
-					std::cout << "3 - Огуречный\n";
-					std::cout << "0 - Выход к выбору категории \n\n";
-					std::cout << "Ввод: ";
-					std::cin >> choosedrink;
-					if (choosedrink == 1)
-					{
-						std::cout << "Литр Томатного сока стоит: 110 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Томатного сока?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							AllSumInBasket = AllSumInBasket + (tomato * number);
-							break;
-						}
-					}
-
-					if (choosedrink == 2)
-					{
-						std::cout << "Литр Лукового сока стоит: 95 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Лукового сока?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							int FreeLiter = number / 4;
-							AllSumInBasket = AllSumInBasket + (onion * number);
-							AllSumInBasket = AllSumInBasket - (FreeLiter * onion);
-							if (FreeLiter > 0)
-							{
-								std::cout << "Вам подарок: " << FreeLiter << " л бесплатно!\n";
-							}
-							else
-							{
-								std::cout << "Скидки нет (нужно минимум 4 литра).\n";
-							}
-							Sleep(1500);
-							break;
-						}
-					}
-
-					if (choosedrink == 3)
-					{
-						std::cout << "Литр Огуречного сока стоит: 120 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Огуречного сока?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							AllSumInBasket = AllSumInBasket + (cucumber * number);
-							break;
-						}
-					}
-				}
-
-				else if (choosecat == 3)
-				{
-					system("cls");
-					std::cout << "\n\n\n\t\t Выбрана категория Чаи\n\n";
-					std::cout << "1 - Чесночный\n";
-					std::cout << "2 - Петрушевый\n";
-					std::cout << "0 - Выход к выбору категории \n\n";
-					std::cout << "Ввод: ";
-					std::cin >> choosedrink;
-					if (choosedrink == 1)
-					{
-						std::cout << "Литр Чесночного чая стоит: 65 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Чесночного чая?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							AllSumInBasket = AllSumInBasket + (garlic * number);
-							break;
-						}
-					}
-					if (choosedrink == 2)
-					{
-						std::cout << "Литр Петрушевого чая стоит: 85 рублей\n\n";
-						while (true)
-						{
-							std::cout << "Сколько хотите взять литров Петрушевого чая?\n";
-							std::cout << "Ввод: ";
-							std::cin >> number;
-							AllSumInBasket = AllSumInBasket + (petr * number);
-							if (number >= 3)
-							{
-								AllSumInBasket += (petr * number) * 0.95;
-								std::cout << "Вам предоставлена скидка 5% на Петрушевый чай\n";
-							}
-							else
-							{
-								AllSumInBasket += petr * number;
-							}
-							Sleep(1500);
-							break;
-						}
-					}
-				}
-				
-				else if (choosecat == 4)
-				{
-					system("cls");
-					std::cout << "\n\n\n\t\t Выбрана категория Настойки\n\n";
-					std::cout << "1 - Боярышник\n";
-					std::cout << "0 - Выход к выбору категории\n\n";
-					std::cout << "Ввод: ";
-					std::cin >> choosedrink;
-					if (choosedrink == 1)
-					{
-						if (fruitBought)
-						{
-							std::cout << "\nБоярышник недоступен: вы уже купили фруктовый сок\n";
-							Sleep(1500);
-							break;
-						}
-						else
-						{
-							std::cout << "Литр настойки Боярышник стоит: 250 рублей\n\n";
-							while (true)
-							{
-								std::cout << "Сколько хотите взять литров Боярышника?\n";
-								std::cout << "Ввод: ";
-								std::cin >> number;
-								cost = hawthorn * number;
-								AllSumInBasket += cost;
-								hawthornSum += cost;
-								hawthornBought = true;
-								break;
-							}
-						}
-					}
-				}
-				else if (choosecat == 0)
-				{
-					break;
-				}
-		else
-		{
-			std::cout << "\nНекорректный ввод\n";
-			Sleep(1500);
-		}
-	}
-}
-	else if (choosemenu == 2)
-	{
-		if (AllSumInBasket > 1000)
-		{
-			sumDiscount = AllSumInBasket * 0.87;
-			std::cout << "Вам предоставлена скидка 13% на весь чек\n";
-			std::cout << "Общая сумма что находиться в корзине: " << sumDiscount << " руб";
-		}
-		else
-		{
-			std::cout << "Общая сумма что находиться в корзине: " << AllSumInBasket << " руб";
-		}
-		break;
-	}
-	
-	else if (choosemenu == 0)
-	{
-		std::cout << "\n\n\n\t\t Спасибо что зашли! Приходите ещё!\n\n";
-		break;
-	}
-		else
-		{
-			std::cout << "\nНекорректный ввод\n";
-			Sleep(1500);
-		}
-	}
 
 	return 0;
 	}
@@ -368,6 +60,7 @@ else
 {
 	std::cout << "\nОшибка";
 }*/
+
 /*
 
 
@@ -405,6 +98,7 @@ else
 
 
 */
+
 /*	double a = 0, b = 0, c = 0, d = 0, x1 = 0, x2 = 0;
 
 
@@ -444,6 +138,7 @@ else
 		std::cout << "Второй корень:" << x2 << "\n\n";
 	}
 */
+
 /*
 int choose = 0, randomNumber = 0, hp = 0, number = 0;
 int maxHp = 25, maxHpHard = 25, chance = 30;
@@ -753,6 +448,7 @@ while (true)
 		Sleep(1500);
 	}
 }*/
+
 /*int randomNumber = 0;
 const int size = 10;
 double sumplus = 0;
@@ -789,6 +485,7 @@ std::cout << "\n" << "Сумма всех положительных чисел:
 std::cout << "\n" << "Сумма всех отрицательных чисел: " << summines;
 std::cout << "\n" << "Среднее арифметическое всех чисел: " << (sumplus + summines) / size;
 */
+
 /*	const int row = 3, col = 4; 
 
 
@@ -806,6 +503,7 @@ std::cout << "\n" << "Среднее арифметическое всех чи�
 	}
 	std::cout << "\n";
 	*/
+
 /*	
 		const int massiv = 5;
 		int arr[massiv]{};
@@ -825,6 +523,7 @@ std::cout << "\n" << "Среднее арифметическое всех чи�
 			std::cout << arr[g] << " ";
 		}
 	*/
+
 /*	const int row = 3, col = 4;
 
 
@@ -844,3 +543,393 @@ std::cout << "\n" << "Среднее арифметическое всех чи�
 			std::cout << "| " << sum << "\n";
 		}
 	*/
+
+/*	int choosemenu = 0;
+		int choosecat = 0;
+		int choosedrink = 0;
+		int choose = 0;
+		int AllSumInBasket = 0;
+		int number = 0;
+		int apple = 120, orange = 140, apricot = 145, pear = 130;
+		int tomato = 110, onion = 95, cucumber = 120;
+		int garlic = 75, petr = 85;
+		double sumDiscount = 0;
+		int hawthorn = 250;
+		bool fruitBought = false;
+		bool hawthornBought = false;
+		int hawthornSum = 0;
+		int cost = 0;
+
+
+
+		while (true)
+		{
+			system("cls");
+			std::cout << "\t \t \t \t \t \t Магазин Соки Севы\n";
+			std::cout << "1 - Категории\n";
+			std::cout << "2 - Общая сумма корзины\n";
+			std::cout << "0 - Выход из магазина\n\n";
+			std::cout << "Ввод: ";
+			std::cin >> choosemenu;
+
+			if (choosemenu == 1)
+			{
+				while (true)
+				{
+					system("cls");
+					std::cout << "\n\n\n\t\t Выберите категорию\n\n\n";
+					std::cout << "1 - Фруктовые\n";
+					std::cout << "2 - Овощные\n";
+					std::cout << "3 - Чаи\n";
+					std::cout << "4 - Настойки\n";
+					std::cout << "0 - Выход \n\n";
+					std::cout << "Ввод: ";
+					std::cin >> choosecat;
+
+
+					if (choosecat == 1)
+					{
+						int fruitJustBought = 0;
+
+						system("cls");
+						std::cout << "\n\n\n\t\t Выбрана категория Фруктовые\n\n\n";
+						std::cout << "1 - Яблочный\n";
+						std::cout << "2 - Апельсиновый\n";
+						std::cout << "3 - Абрикосовый\n";
+						std::cout << "4 - Грушевый \n";
+						std::cout << "0 - Выход к выбору категории \n\n";
+						std::cout << "Ввод: ";
+						std::cin >> choosedrink;
+						if (choosedrink == 1)
+						{
+							std::cout << "Литр Яблочного сока стоит: 120 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Яблочного сока?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								AllSumInBasket = AllSumInBasket + (apple * number);
+								fruitJustBought++;
+								break;
+
+							}
+						}
+						if (choosedrink == 2)
+						{
+							std::cout << "Литр Апельсинового сока стоит: 140 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Апелсинового сока?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								AllSumInBasket = AllSumInBasket + (orange * number);
+								fruitJustBought++;
+								break;
+							}
+						}
+						if (choosedrink == 3)
+						{
+							std::cout << "Литр Абрикосового сока стоит: 145 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Абрикосового сока?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								AllSumInBasket = AllSumInBasket + (apricot * number);
+								fruitJustBought++;
+								break;
+							}
+						}
+						if (choosedrink == 4)
+						{
+							std::cout << "Литр Грушевого сока стоит: 130 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Грушевого сока?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								AllSumInBasket = AllSumInBasket + (pear * number);
+								fruitJustBought++;
+								break;
+							}
+						}
+						if (fruitJustBought > 0 && !fruitBought)
+						{
+							fruitBought = true;
+
+							if (hawthornBought)
+							{
+								AllSumInBasket -= hawthornSum;
+								hawthornBought = false;
+								hawthornSum = 0;
+
+								system("cls");
+								std::cout << "Покупка фруктового сока АННУЛИРОВАЛА боярышник\n";
+								std::cout << "Деньги за настойку возвращены в корзину\n";
+								std::cout << "Боярышник больше недоступен для покупки\n";
+								Sleep(2500);
+							}
+							else
+							{
+								std::cout << "\nВнимание! После покупки фруктового сока боярышник недоступен.\n";
+								Sleep(1500);
+							}
+						}
+					}
+
+					else if (choosecat == 2)
+					{
+						system("cls");
+						std::cout << "\n\n\n\t\t Выбрана категория Овощные\n\n\n";
+						std::cout << "1 - Томатный\n";
+						std::cout << "2 - Луковый\n";
+						std::cout << "3 - Огуречный\n";
+						std::cout << "0 - Выход к выбору категории \n\n";
+						std::cout << "Ввод: ";
+						std::cin >> choosedrink;
+						if (choosedrink == 1)
+						{
+							std::cout << "Литр Томатного сока стоит: 110 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Томатного сока?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								AllSumInBasket = AllSumInBasket + (tomato * number);
+								break;
+							}
+						}
+
+						if (choosedrink == 2)
+						{
+							std::cout << "Литр Лукового сока стоит: 95 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Лукового сока?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								int FreeLiter = number / 4;
+								AllSumInBasket = AllSumInBasket + (onion * number);
+								AllSumInBasket = AllSumInBasket - (FreeLiter * onion);
+								if (FreeLiter > 0)
+								{
+									std::cout << "Вам подарок: " << FreeLiter << " л бесплатно!\n";
+								}
+								else
+								{
+									std::cout << "Скидки нет (нужно минимум 4 литра).\n";
+								}
+								Sleep(1500);
+								break;
+							}
+						}
+
+						if (choosedrink == 3)
+						{
+							std::cout << "Литр Огуречного сока стоит: 120 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Огуречного сока?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								AllSumInBasket = AllSumInBasket + (cucumber * number);
+								break;
+							}
+						}
+					}
+
+					else if (choosecat == 3)
+					{
+						system("cls");
+						std::cout << "\n\n\n\t\t Выбрана категория Чаи\n\n";
+						std::cout << "1 - Чесночный\n";
+						std::cout << "2 - Петрушевый\n";
+						std::cout << "0 - Выход к выбору категории \n\n";
+						std::cout << "Ввод: ";
+						std::cin >> choosedrink;
+						if (choosedrink == 1)
+						{
+							std::cout << "Литр Чесночного чая стоит: 65 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Чесночного чая?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								AllSumInBasket = AllSumInBasket + (garlic * number);
+								break;
+							}
+						}
+						if (choosedrink == 2)
+						{
+							std::cout << "Литр Петрушевого чая стоит: 85 рублей\n\n";
+							while (true)
+							{
+								std::cout << "Сколько хотите взять литров Петрушевого чая?\n";
+								std::cout << "Ввод: ";
+								std::cin >> number;
+								AllSumInBasket = AllSumInBasket + (petr * number);
+								if (number >= 3)
+								{
+									AllSumInBasket += (petr * number) * 0.95;
+									std::cout << "Вам предоставлена скидка 5% на Петрушевый чай\n";
+								}
+								else
+								{
+									AllSumInBasket += petr * number;
+								}
+								Sleep(1500);
+								break;
+							}
+						}
+					}
+
+					else if (choosecat == 4)
+					{
+						system("cls");
+						std::cout << "\n\n\n\t\t Выбрана категория Настойки\n\n";
+						std::cout << "1 - Боярышник\n";
+						std::cout << "0 - Выход к выбору категории\n\n";
+						std::cout << "Ввод: ";
+						std::cin >> choosedrink;
+						if (choosedrink == 1)
+						{
+							if (fruitBought)
+							{
+								std::cout << "\nБоярышник недоступен: вы уже купили фруктовый сок\n";
+								Sleep(1500);
+								break;
+							}
+							else
+							{
+								std::cout << "Литр настойки Боярышник стоит: 250 рублей\n\n";
+								while (true)
+								{
+									std::cout << "Сколько хотите взять литров Боярышника?\n";
+									std::cout << "Ввод: ";
+									std::cin >> number;
+									cost = hawthorn * number;
+									AllSumInBasket += cost;
+									hawthornSum += cost;
+									hawthornBought = true;
+									break;
+								}
+							}
+						}
+					}
+					else if (choosecat == 0)
+					{
+						break;
+					}
+			else
+			{
+				std::cout << "\nНекорректный ввод\n";
+				Sleep(1500);
+			}
+		}
+	}
+		else if (choosemenu == 2)
+		{
+			if (AllSumInBasket > 1000)
+			{
+				sumDiscount = AllSumInBasket * 0.87;
+				std::cout << "Вам предоставлена скидка 13% на весь чек\n";
+				std::cout << "Общая сумма что находиться в корзине: " << sumDiscount << " руб";
+			}
+			else
+			{
+				std::cout << "Общая сумма что находиться в корзине: " << AllSumInBasket << " руб";
+			}
+			break;
+		}
+
+		else if (choosemenu == 0)
+		{
+			std::cout << "\n\n\n\t\t Спасибо что зашли! Приходите ещё!\n\n";
+			break;
+		}
+			else
+			{
+				std::cout << "\nНекорректный ввод\n";
+				Sleep(1500);
+			}
+		}*/
+
+/*	int a = 5;
+			//int b = 10;
+
+			int* ptr = &a;
+			//ptr = &b;
+
+			std::cout << a << "\n";
+			std::cout << &a << "\n";
+			std::cout << ptr << "\n";
+			std::cout << *ptr << "\n";
+			std::cout << &ptr << "\n";*/
+
+/*void MySwap(int* one, int* two)
+{
+	int three = *one;
+	*one = *two;
+	*two = three;
+}
+
+void MySwap(int& one, int& two)
+{
+	int three = one;
+	one = two;
+	two = three;
+}
+
+int main()
+{
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	srand(time(NULL));
+
+	int one = 10, two = 25;
+
+	std::cout << one << " " << two << "\n";
+	MySwap(&one, &two);
+	std::cout << one << " " << two << "\n";*/
+
+/*void FillArray(int *ar, int size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			*(ar + i) = rand() % 10;
+		}
+		return;
+
+		const int size = 5;
+		int arr[size]{ 3, 1, 2, 5, 6 };
+
+		std::cout << arr << "\n";
+		std::cout << *arr << "\n";
+		std::cout << arr + 1 << "\n";
+		std::cout << *(arr + 1) << "\n";
+		FillArray(arr, size);
+
+		std::cout << arr << "\n";*/
+
+/*int* Lol()
+		{
+			int* car = new int;
+			return car;
+		}
+			int a = 5;
+
+	int* car = new int;
+
+	int* farit = Lol();
+
+	delete farit;
+	delete car;
+	farit = nullptr;
+	car = nullptr;
+
+	car = &a;
+
+	car = new int;
+
+	delete car;*/
+		
