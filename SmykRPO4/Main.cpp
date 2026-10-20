@@ -3,13 +3,11 @@
 
 
 
-
 int main()
 {
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
 	srand(time(NULL));
-
 
 
 
@@ -932,4 +930,133 @@ int main()
 	car = new int;
 
 	delete car;*/
-		
+
+/*	int* arr = new int[5];
+
+		arr[0] = 10;
+
+		delete[] arr;
+
+		arr = nullptr;*/
+
+/*	int row = 3, col = 4;
+
+			int** name = new int* [row];
+			for (int i = 0; i < row; i++)
+			{
+				name[i] = new int[col];
+			}
+			name[1][2] = 100;
+
+			for (int i = 0; i < row; i++)
+			{
+				delete name[i];
+			}
+			delete[] name;*/
+
+/*	int side = 2, row = 4, col1 = 4, col2 = 3;
+
+				int*** seva = new int** [side];
+
+				for (int i = 0; i < side; i++)
+				{
+					seva[i] = new int* [row];
+				}
+
+				for (int i = 0; i < row; i++)
+				{
+					seva[0][i] = new int[col1];
+				}
+				seva[1][0] = new int[2];
+				for (int i = 0; i < row; i++)
+				{
+					seva[1][i] = new int[col2];
+				}
+
+				for (int i = 0; i < side; i++)
+				{
+					for (int j = 0; j < row; j++)
+					{
+						delete[] seva[i][j];
+					}
+					delete[] seva[i];
+				}
+				delete[] seva;*/
+
+/*void PushArray(int *&arr, int &size)
+				{
+					int* temp = new int[size];
+					for (int i = 0; i < size; i++)
+					{
+						temp[i] = arr[i];
+					}
+
+					delete[]arr;
+					size++;
+					arr = new int[size];
+
+					for (int i = 0; i < size -1; i++)
+					{
+						arr[i] = temp[i];
+					}
+
+					delete[] temp;
+
+					arr[size - 1] = 42;
+				}
+
+				void PushArray2(int*& arr, int& size)
+				{
+					size++;
+
+					int* temp = new int[size];
+
+					for (int i = 0; i < size - 1; i++)
+					{
+						temp[i] = arr[i];
+					}
+
+					temp[size - 1] = 100;
+
+					std::swap(arr, temp);
+
+					delete[]arr;
+				}
+				int size = 5;
+
+	int* arr = new int[size] {5, 3, 8, 1, 9};
+
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n\n";
+
+	PushArray(arr, size);
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+
+	delete[]arr;*/
+
+/*void Distribution(int*& Da, int& size)
+	{
+		if (Da != nullptr)
+		{
+			delete[] Da;
+		}
+		Da = new int[size];
+	}
+
+	void DeleteArray(int*& Da)
+	{
+		if (Da == nullptr)
+		{
+			return;
+		}
+		delete[] Da;
+		Da = nullptr;
+	}
+	int size = 5;
+	int* ptr = nullptr;*/
