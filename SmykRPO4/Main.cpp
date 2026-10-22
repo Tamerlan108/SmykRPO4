@@ -1,5 +1,8 @@
+#define NOMINMAX
 #include <iostream>
 #include <Windows.h>
+#include <string>
+#include <limits>
 
 
 
@@ -8,7 +11,62 @@ int main()
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
 	srand(time(NULL));
-	  
+	 
+	std::string Login;
+	std::string Password;
+	std::string Login_Correct;
+	std::string Password_Correct;
+
+	while (true)
+	{
+		system("cls");
+		std::cout << "Введите логин (Не меньше 5 и не больше 15 символов): \n";
+		std::getline(std::cin, Login);
+		std::cout << "Введите пароль (Не меньше 5 и не больше 15 символов): \n";
+		std::getline(std::cin, Password);
+		if ((Login.size() >= 5 && Login.size() <= 15) && (Password.size() >= 5 && Password.size() <= 15))
+		{
+			while (true)
+			{
+				system("cls");
+				std::cout << "Введите логин: \n";
+				std::getline(std::cin, Login_Correct);
+				std::cout << "Введите пароль: \n";
+				std::getline(std::cin, Password_Correct);
+				if ((Login == Login_Correct) && (Password == Password_Correct))
+				{
+					system("cls");
+					std::cout << "Россия Путин Победа";
+					Sleep(3000);
+					break;
+				}
+				else
+				{
+					std::cout << "Неправильно";
+					Sleep(3000);
+				}
+			}
+		}
+		else
+		{
+			std::cout << "Неправильно";
+			Sleep(3000);
+		}
+
+
+
+/*		if ((Login || Password) < Min)
+		{
+			std::cout << "Логин или пароль меньше 5 символов\n";
+			break;
+		}
+		else if ((Login || Password) > Max)
+		{
+			std::cout << "Логин или пароль больше 15 символов\n";
+			break;
+		}*/
+	}
+
 
 
 	return 0;
@@ -1060,3 +1118,47 @@ int main()
 	}
 	int size = 5;
 	int* ptr = nullptr;*/
+
+/*	отладка
+
+	std::string name = "Text";
+	std::string one = name + " new\n";
+	std::string* ptr = nullptr;
+	ptr = new std::string[10];
+	delete[] ptr;
+
+	std::string arr[5]{ "Text", "Ivan", "Garlic", "Apple", "Bio Ware Rip"};
+
+	auto it = std::find(arr->begin(), arr->end(), "Apple");
+
+	//name.erase(2);
+
+	for (int i = 0; i < name.size(); i++)
+	{
+		if (name[i] == 'T')
+		{
+			name[i] = 't';
+		}
+		std::cout << name[i];
+	}*/
+
+/*	std::string one;
+		int num = 0;
+
+
+		//откуда_взять_текст,туда_его_присвоить
+		std::getline(std::cin, one);
+		std::cout << one << "\n";
+
+		std::getline(std::cin, one, '\n'); // pahom@mail.ru
+		std::cout << one << "\n";
+		std::cin >> num;
+		std::cout << num << "\n";
+
+		//std::cin.ignore(32767, '\n');  //норм вариант
+
+		// top вариант
+		//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+		std::getline(std::cin, one);
+		std::cout << one << "\n";*/
